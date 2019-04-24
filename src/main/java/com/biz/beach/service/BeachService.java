@@ -62,8 +62,11 @@ public class BeachService {
 		List<BeachVO> hotBList=new ArrayList<BeachVO>();
 		
 		List<MemoVO> t_List=ms.getHotB();
-		
-		for(int i=0; i<3; i++) {
+		int size=t_List.size();
+		if(size>3) {
+			size=3;
+		}
+		for(int i=0; i<size; i++) {
 			BeachVO vo=new BeachVO();
 			vo=bMapper.findByName(t_List.get(i).getB_id());
 			hotBList.add(vo);

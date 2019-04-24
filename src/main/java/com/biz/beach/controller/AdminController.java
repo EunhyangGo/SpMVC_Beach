@@ -45,6 +45,7 @@ public class AdminController {
 	public String adminLogin(Model model, HttpSession session, @ModelAttribute AdminVO vo) {
 		
 		//as.insertAdmin(vo);
+		
 		if(as.chkPass(vo)) {
 			model.addAttribute("BODY", "ADMIN");
 			model.addAttribute("MENUTYPE", "ADMIN");

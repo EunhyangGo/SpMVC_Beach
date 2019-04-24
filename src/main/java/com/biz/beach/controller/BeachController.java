@@ -16,6 +16,9 @@ import com.biz.beach.model.MemoVO;
 import com.biz.beach.service.BeachService;
 import com.biz.beach.service.MemoService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class BeachController {
 	
@@ -27,12 +30,15 @@ public class BeachController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		
+		log.debug("Beach 1 ");
 		model.addAttribute("RELIST", bs.selectRecommend());
 		model.addAttribute("HOTM", bs.hotM());
 		model.addAttribute("HOTB", bs.getHotB());
+		log.debug("Beach 2 ");
 		model.addAttribute("MENU", bs.getMenus());
 		model.addAttribute("MENUTYPE", "USER");
 		model.addAttribute("BODY", "MAIN");
+		log.debug("Beach 3 ");
 		model.addAttribute("NUM", ms.countMemo());
 		
 		return "home";

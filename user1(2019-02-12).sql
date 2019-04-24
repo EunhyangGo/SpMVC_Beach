@@ -1,4 +1,4 @@
-
+delete from tbl_main;
 create table tbl_main(
     b_id number primary key,
     title nvarchar2(50) not null,
@@ -34,11 +34,16 @@ create table tbl_admin(
     admin_id nvarchar2(20) primary key,
     admin_pass nvarchar2(255)
 );
+ select * from tbl_admin;
 
+select * from avgBeach;
+select * from tbl_memo;
 
+drop SEQUENCE seq_memo;
+create SEQUENCE seq_memo
+  START WITH 10
+  INCREMENT BY 1 ;
 
+select * from tbl_memo;
 
-
-
-
-
+commit;
